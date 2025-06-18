@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皮尔熊官方网站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#FF7D00',
+            accent: '#FF3D00',
+            dark: '#1D2129',
+            light: '#F2F3F5',
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+      }
+      .btn-primary {
+        @apply bg-primary text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:outline-none;
+      }
+      .btn-secondary {
+        @apply bg-secondary text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 focus:ring-2 focus:ring-secondary/50 focus:outline-none;
+      }
+      .section-title {
+        @apply text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6 relative;
+      }
+      .section-title::after {
+        @apply content-[''] absolute w-20 h-1 bg-primary bottom-[-8px] left-0;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+  <!-- 导航栏 -->
+  <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <div class="flex items-center">
+          <a href="#" class="text-primary font-bold text-xl md:text-2xl flex items-center">
+            <i class="fa fa-users-circle-o mr-2"></i>
+            <span>皮尔熊官方网站</span>
+          </a>
+        </div>
+        
+        <!-- 桌面导航 -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#character" class="text-dark hover:text-primary font-medium transition-colors duration-200">角色人物志</a>
+          <a href="#vote" class="text-dark hover:text-primary font-medium transition-colors duration-200">投票</a>
+          <a href="#lottery" class="text-dark hover:text-primary font-medium transition-colors duration-200">抽奖</a>
+          <a href="#sponsor" class="text-dark hover:text-primary font-medium transition-colors duration-200">赞助</a>
+        </nav>
+        
+        <!-- 移动端菜单按钮 -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-dark hover:text-primary focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="container mx-auto px-4 py-3 space-y-2">
+        <a href="#character" class="block py-2 text-dark hover:text-primary font-medium">角色人物志</a>
+        <a href="#vote" class="block py-2 text-dark hover:text-primary font-medium">投票</a>
+        <a href="#lottery" class="block py-2 text-dark hover:text-primary font-medium">抽奖</a>
+        <a href="#sponsor" class="block py-2 text-dark hover:text-primary font-medium">赞助</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section class="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-primary/5 to-primary/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight mb-6">
+          roblox
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8">
+          欢迎来到我们的社区互动平台，这里有精彩的角色故事、有趣的投票活动、惊喜的抽奖环节和暖心的赞助计划。
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#character" class="btn-primary">
+            <i class="fa fa-user-circle mr-2"></i>探索角色人物志
+          </a>
+          <a href="#vote" class="btn-secondary">
+            <i class="fa fa-check-square-o mr-2"></i>立即参与投票
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 角色人物志区域 -->
+  <section id="character" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="section-title">故事角色人物志</h2>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl">
+          认识我们故事中的杰出角色，了解他们的背景故事吧。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 人物卡片1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="relative h-48 overflow-hidden">
+            <img src="file:///C:/Users/13445/Documents/Tencent%20Files/1344564437/nt_qq/nt_data/Pic/2025-06/Ori/0f72c0d52560fac06458eacb3172abd1.png" alt="贝尔·德利安 - 主角" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-4 right-4 bg-primary/90 text-white text-sm font-medium py-1 px-3 rounded-full">
+              主角
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2">贝尔·德利安</h3>
+            <p class="text-gray-600 mb-4">美籍法国人是blox大学计算机学二系的学生硕士学位，具有领导能力。</p>
+            <div class="flex items-center text-sm text-gray-500 mb-4">
+              <span class="flex items-center mr-4">
+                <i class="fa fa-calendar-o mr-1"></i> 年龄:19岁
+              </span>
+              <span class="flex items-center">
+                <i class="fa fa-star mr-1"></i> 获赞: 2.5k
+              </span>
+            </div>
+            <button class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 flex items-center">
+              查看详情 <i class="fa fa-angle-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 人物卡片2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="relative h-48 overflow-hidden">
+            <img src="https://picsum.photos/seed/person2/600/400" alt="鲍勃 - 男二" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-4 right-4 bg-secondary/90 text-white text-sm font-medium py-1 px-3 rounded-full">
+              男二
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2">鲍勃</h3>
+            <p class="text-gray-600 mb-4">和贝尔是一个系的同学但是不熟并且家里很穷但他并不在意比较懦弱</p>
+            <div class="flex items-center text-sm text-gray-500 mb-4">
+              <span class="flex items-center mr-4">
+                <i class="fa fa-calendar-o mr-1"></i> 年龄:19岁
+              </span>
+              <span class="flex items-center">
+                <i class="fa fa-star mr-1"></i> 获赞: 3.8k
+              </span>
+            </div>
+            <button class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 flex items-center">
+              查看详情 <i class="fa fa-angle-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 人物卡片3 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="relative h-48 overflow-hidden">
+            <img src="file:///C:/Users/13445/Documents/Tencent%20Files/1344564437/nt_qq/nt_data/Pic/2025-06/Ori/08671a8474032407e163176dc63a799b.png" alt="道格 - 男三" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-4 right-4 bg-accent/90 text-white text-sm font-medium py-1 px-3 rounded-full">
+              男三
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2">道格</h3>
+            <p class="text-gray-600 mb-4">贝尔学校附近的护林员爱好大自然沉默寡言却是个口是心非关心他人的人有一位女儿</p>
+            <div class="flex items-center text-sm text-gray-500 mb-4">
+              <span class="flex items-center mr-4">
+                <i class="fa fa-calendar-o mr-1"></i> 年龄：40
+              </span>
+              <span class="flex items-center">
+                <i class="fa fa-star mr-1"></i> 获赞: 4.2k
+              </span>
+            </div>
+            <button class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 flex items-center">
+              查看详情 <i class="fa fa-angle-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 人物卡片4 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="relative h-48 overflow-hidden">
+            <img src="file:///C:/Users/13445/Documents/Tencent%20Files/1344564437/nt_qq/nt_data/Pic/2025-06/Ori/55cf8c4672c433b3ad43e3b8e633afc7.jpg" alt="尼尔 - 男四" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute top-4 right-4 bg-secondary/90 text-white text-sm font-medium py-1 px-3 rounded-full">
+              男四
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-dark mb-2">尼尔</h3>
+            <p class="text-gray-600 mb-4">一位乌克兰士兵由于俄美战争影响到了乌克兰让尼尔和他的队友去美国探查在他离开期间妻子被腐化杀死到了美国上空最终还是被腐化击落飞机队友全部死亡。</p>
+            <div class="flex items-center text-sm text-gray-500 mb-4">
+              <span class="flex items-center mr-4">
+                <i class="fa fa-calendar-o mr-1"></i> 年龄:32岁
+              </span>
+              <span class="flex items-center">
+                <i class="fa fa-star mr-1"></i> 获赞: 3.2k
+              </span>
+            </div>
+            <button class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 flex items-center">
+              查看详情 <i class="fa fa-angle-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+        <!-- 人物卡片4 -->
+
+
+  <!-- 投票区域 -->
+  <section id="vote" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="section-title">热门投票</h2>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl">
+          参与社区投票，表达你的观点，影响社区发展方向，让你的声音被听到。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- 投票卡片1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-dark">你希望下一个要拍摄什么类型</h3>
+              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                进行中
+              </span>
+            </div>
+            <p class="text-gray-600 mb-6">我们下一部的演戏剧本。</p>
+            
+            <div class="space-y-4 mb-6">
+              <!-- 投票选项1 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="activity" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">求生者</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">42%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 42%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项2 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="activity" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">bot</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">31%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 31%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项3 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="activity" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">腐蚀吧台</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">18%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 18%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项4 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="activity" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">僵尸</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">9%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 9%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fa fa-clock-o mr-1"></i> 剩余时间: 7天
+              </span>
+              <button class="btn-primary">
+                <i class="fa fa-check mr-2"></i>提交投票
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 投票卡片2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-dark">你最喜欢哪个功能</h3>
+              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                进行中
+              </span>
+            </div>
+            <p class="text-gray-600 mb-6">我们希望了解哪些功能最受社区成员欢迎，以便进一步优化和扩展这些功能。</p>
+            
+            <div class="space-y-4 mb-6">
+              <!-- 投票选项1 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="feature" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">人物志</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">38%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 38%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项2 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="feature" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">问答社区</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">27%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 27%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项3 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="feature" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">活动日历</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">22%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 22%"></div>
+                </div>
+              </div>
+              
+              <!-- 投票选项4 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-gray-700 font-medium flex items-center">
+                    <input type="radio" name="feature" class="w-4 h-4 text-primary focus:ring-primary border-gray-300">
+                    <span class="ml-2">资源共享</span>
+                  </label>
+                  <span class="text-sm font-medium text-gray-600">13%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div class="bg-primary h-2.5 rounded-full" style="width: 13%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fa fa-clock-o mr-1"></i> 剩余时间: 3天
+              </span>
+              <button class="btn-primary">
+                <i class="fa fa-check mr-2"></i>提交投票
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <button class="btn-primary">
+          <i class="fa fa-list mr-2"></i>查看更多投票
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 抽奖区域 -->
+  <section id="lottery" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="section-title">幸运抽奖</h2>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl">
+          参与社区活动，赢取精美奖品。每次参与都会增加你的中奖机会，试试手气吧！
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- 抽奖转盘 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 relative overflow-hidden card-hover">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-bold text-dark mb-2">月度幸运抽奖</h3>
+            <p class="text-gray-600">活动时间: 2025.06.01 - 2025.06.30</p>
+            <p id="chance-text" class="text-gray-600">今日剩余抽奖次数: <span id="chance-count">2</span></p>
+          </div>
+          
+          <!-- 转盘 -->
+          <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80 mb-8">
+            <div id="wheel-container" class="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+              <div id="wheel" class="absolute inset-0 transition-transform duration-5000 ease-out">
+                <!-- 转盘分区 - 共8个 -->
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/10 flex items-center justify-center" style="transform: rotate(0deg);">
+                  <div class="transform -rotate-22.5 text-center px-4">
+                    <i class="fa fa-gift text-primary text-xl mb-1"></i>
+                    <p class="text-sm font-medium">一等奖</p>
+                    <p class="text-xs">100r</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/5 flex items-center justify-center" style="transform: rotate(45deg);">
+                  <div class="transform -rotate-67.5 text-center px-4">
+                    <i class="fa fa-trophy text-secondary text-xl mb-1"></i>
+                    <p class="text-sm font-medium">二等奖</p>
+                    <p class="text-xs">200r</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/10 flex items-center justify-center" style="transform: rotate(90deg);">
+                  <div class="transform -rotate-112.5 text-center px-4">
+                    <i class="fa fa-certificate text-accent text-xl mb-1"></i>
+                    <p class="text-sm font-medium">三等奖</p>
+                    <p class="text-xs">50r</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/5 flex items-center justify-center" style="transform: rotate(135deg);">
+                  <div class="transform -rotate-157.5 text-center px-4">
+                    <i class="fa fa-times text-gray-500 text-xl mb-1"></i>
+                    <p class="text-sm font-medium">谢谢参与</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/10 flex items-center justify-center" style="transform: rotate(180deg);">
+                  <div class="transform rotate-157.5 text-center px-4">
+                    <i class="fa fa-certificate text-accent text-xl mb-1"></i>
+                    <p class="text-sm font-medium">三等奖</p>
+                    <p class="text-xs">50r</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/5 flex items-center justify-center" style="transform: rotate(225deg);">
+                  <div class="transform rotate-112.5 text-center px-4">
+                    <i class="fa fa-times text-gray-500 text-xl mb-1"></i>
+                    <p class="text-sm font-medium">谢谢参与</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/10 flex items-center justify-center" style="transform: rotate(270deg);">
+                  <div class="transform rotate-67.5 text-center px-4">
+                    <i class="fa fa-trophy text-secondary text-xl mb-1"></i>
+                    <p class="text-sm font-medium">二等奖</p>
+                    <p class="text-xs">200r</p>
+                  </div>
+                </div>
+                <div class="absolute w-1/2 h-1/2 origin-bottom-right bg-primary/5 flex items-center justify-center" style="transform: rotate(315deg);">
+                  <div class="transform rotate-22.5 text-center px-4">
+                    <i class="fa fa-times text-gray-500 text-xl mb-1"></i>
+                    <p class="text-sm font-medium">谢谢参与</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 指针 -->
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div class="w-8 h-12 bg-primary text-white flex items-center justify-center rounded-t-full shadow-lg">
+                <i class="fa fa-caret-down text-xl"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <button id="spin-btn" class="btn-secondary text-lg py-3 px-8 disabled:opacity-50 disabled:cursor-not-allowed">
+              <i class="fa fa-refresh mr-2"></i>开始抽奖
+            </button>
+            <p id="result-text" class="mt-4 text-gray-600"></p>
+          </div>
+        </div>
+        
+        <!-- 奖品说明 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-dark mb-4">奖品说明</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start">
+              <div class="bg-primary/10 p-2 rounded-full mr-3">
+                <i class="fa fa-gift text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">一等奖（200r）</h4>
+                <p class="text-sm text-gray-600">将由老登提供</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-secondary/10 p-2 rounded-full mr-3">
+                <i class="fa fa-trophy text-secondary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">二等奖（100r）</h4>
+                <p class="text-sm text-gray-600">还是老登提供</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-accent/10 p-2 rounded-full mr-3">
+                <i class="fa fa-certificate text-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">三等奖（50r）</h4>
+                <p class="text-sm text-gray-600">老登提供</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-gray-100 p-2 rounded-full mr-3">
+                <i class="fa fa-times text-gray-500"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-dark">谢谢参与</h4>
+                <p class="text-sm text-gray-600">这个我来提供🤓</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <h4 class="font-medium text-dark mb-3">中奖概率说明</h4>
+            <div class="space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-700">一等奖</span>
+                <span class="text-gray-700">10%</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700">二等奖</span>
+                <span class="text-gray-700">20%</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700">三等奖</span>
+                <span class="text-gray-700">30%</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700">谢谢参与</span>
+                <span class="text-gray-700">50%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 赞助区域 -->
+  <section id="sponsor" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="section-title">赞助支持</h2>
+        <p class="text-lg text-gray-600 mt-4 max-w-3xl">
+          感谢以下企业和个人对社区的慷慨赞助，他们的支持是社区持续发展的重要动力。
+        </p>
+      </div>
+
+      <!-- 赞助级别说明 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-diamond text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">钻石赞助商</h3>
+          <p class="text-gray-600 mb-4">年度赞助金额超过10万元</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              社区首页显著位置展示
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              活动冠名权
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              专题推广机会
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              招聘专区推荐
+            </li>
+          </ul>
+          <a href="#sponsor-form" class="text-primary hover:text-primary/80 font-medium transition-colors duration-200">
+            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+          <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-star text-secondary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">金牌赞助商</h3>
+          <p class="text-gray-600 mb-4">年度赞助金额5-10万元</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              社区首页展示
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              活动联合主办
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              内容合作机会
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              招聘信息展示
+            </li>
+          </ul>
+          <a href="#sponsor-form" class="text-primary hover:text-primary/80 font-medium transition-colors duration-200">
+            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+          <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fa fa-circle text-accent text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-2">银牌赞助商</h3>
+          <p class="text-gray-600 mb-4">年度赞助金额1-5万元</p>
+          <ul class="text-left space-y-2 mb-6">
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              社区合作伙伴区展示
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              活动支持单位
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              品牌曝光机会
+            </li>
+            <li class="flex items-center text-gray-700">
+              <i class="fa fa-check text-green-500 mr-2"></i>
+              招聘信息展示
+            </li>
+          </ul>
+          <a href="#sponsor-form" class="text-primary hover:text-primary/80 font-medium transition-colors duration-200">
+            了解详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 赞助商展示 -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-dark mb-6">感谢以下赞助商</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- 赞助商1 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company1/300/150" alt="科技有限公司" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商2 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company2/300/150" alt="创新企业" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商3 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company3/300/150" alt="未来科技" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商4 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company4/300/150" alt="数字媒体" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商5 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company5/300/150" alt="互联网络" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商6 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company6/300/150" alt="智能系统" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商7 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company7/300/150" alt="软件开发" class="max-h-16 object-contain">
+          </div>
+          <!-- 赞助商8 -->
+          <div class="bg-white rounded-lg shadow-sm p-6 flex items-center justify-center h-32 card-hover">
+            <img src="https://picsum.photos/seed/company8/300/150" alt="云服务" class="max-h-16 object-contain">
+          </div>
+        </div>
+      </div>
+
+      <!-- 赞助申请表单 -->
+      <div id="sponsor-form" class="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold text-dark mb-6">成为赞助商</h3>
+        <p class="text-gray-600 mb-6">
+          如果您的企业或个人有兴趣赞助我们的社区，请填写以下表单，我们将尽快与您联系。
+        </p>
+        
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">联系人姓名</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200" placeholder="请输入您的姓名">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">联系电话</label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200" placeholder="请输入您的联系电话">
+            </div>
+          </div>
+          
+          <div>
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">企业/个人名称</label>
+            <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200" placeholder="请输入企业或个人名称">
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">电子邮箱</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200" placeholder="请输入您的电子邮箱">
+          </div>
+          
+          <div>
+            <label for="sponsor-level" class="block text-sm font-medium text-gray-700 mb-1">赞助级别</label>
+            <select id="sponsor-level" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200">
+              <option value="">请选择赞助级别</option>
+              <option value="diamond">钻石赞助商 (10万元以上)</option>
+              <option value="gold">金牌赞助商 (5-10万元)</option>
+              <option value="silver">银牌赞助商 (1-5万元)</option>
+              <option value="other">其他金额</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">赞助意向说明</label>
+            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200" placeholder="请简要说明您的赞助意向和期望..."></textarea>
+          </div>
+          
+          <div class="flex items-center">
+            <input id="privacy" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+            <label for="privacy" class="ml-2 block text-sm text-gray-700">
+              我已阅读并同意<a href="#" class="text-primary hover:text-primary/80">《隐私政策》</a>和<a href="#" class="text-primary hover:text-primary/80">《赞助条款》</a>
+            </label>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="btn-primary text-lg py-3 px-8">
+              <i class="fa fa-paper-plane mr-2"></i>提交申请
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fa fa-users-circle-o mr-2"></i>
+            社区互动平台
+          </h3>
+          <p class="text-gray-400 mb-6">
+            连接志同道合的朋友，分享知识，共同成长。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fa fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fa fa-wechat text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fa fa-github text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+              <i class="fa fa-twitter text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">快速链接</h3>
+          <ul class="space-y-2">
+            <li><a href="#character" class="text-gray-400 hover:text-white transition-colors duration-200">角色人物志</a></li>
+            <li><a href="#vote" class="text-gray-400 hover:text-white transition-colors duration-200">热门投票</a></li>
+            <li><a href="#lottery" class="text-gray-400 hover:text-white transition-colors duration-200">幸运抽奖</a></li>
+            <li><a href="#sponsor" class="text-gray-400 hover:text-white transition-colors duration-200">赞助支持</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">关于我们</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">联系我们</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">联系我们</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+              <span class="text-gray-400">北京市海淀区中关村科技园区</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-primary mr-3"></i>
+              <span class="text-gray-400">010-12345678</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-envelope text-primary mr-3"></i>
+              <span class="text-gray-400">contact@community-platform.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-clock-o text-primary mr-3"></i>
+              <span class="text-gray-400">周一至周五 9:00-18:00</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">订阅通讯</h3>
+          <p class="text-gray-400 mb-4">订阅我们的通讯，获取最新社区活动和消息。</p>
+          <form class="space-y-3">
+            <div>
+              <input type="email" placeholder="您的电子邮箱" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 text-white">
+            </div>
+            <button type="submit" class="btn-primary w-full">
+              <i class="fa fa-paper-plane mr-2"></i>订阅
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 社区互动平台. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+        navbar.classList.remove('bg-white');
+      } else {
+        navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+        navbar.classList.add('bg-white');
+      }
+    });
+
+    // 移动端菜单切换
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // 关闭移动端菜单
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }
+      });
+    });
+
+    // 抽奖转盘逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      const wheel = document.getElementById('wheel');
+      const spinBtn = document.getElementById('spin-btn');
+      const resultText = document.getElementById('result-text');
+      let spinning = false;
+      // 新增：每天抽奖次数和最后抽奖日期
+      let dailyChances = 2;
+      const lastDrawDate = localStorage.getItem('lastDrawDate');
+      const currentDate = new Date().toDateString();
+      if (lastDrawDate !== currentDate) {
+        dailyChances = 2;
+        localStorage.setItem('lastDrawDate', currentDate);
+      } else {
+        dailyChances = parseInt(localStorage.getItem('dailyChances')) || 2;
+      }
+      // 更新按钮状态
+      if (dailyChances <= 0) {
+        spinBtn.disabled = true;
+        resultText.textContent = '今日抽奖次数已用完，明天再来吧！';
+      }
+      // 奖品配置
+      const prizes = [
+        { name: '一等奖', description: '200r由老登提供', chance: 10, angle: 0 },
+        { name: '二等奖', description: '100r由老登提供', chance: 20, angle: 45 },
+        { name: '三等奖', description: '50r由老登提供', chance: 30, angle: 90 },
+        { name: '谢谢参与', description: '感谢您的参与，下次好运！', chance: 50, angle: 135 }
+      ];
+      
+      // 计算每个奖品的角度范围
+      let cumulativeChance = 0;
+      const prizeRanges = prizes.map(prize => {
+        const start = cumulativeChance;
+        cumulativeChance += prize.chance;
+        return {
+          ...prize,
+          start,
+          end: cumulativeChance
+        };
+      });
+      
+      spinBtn.addEventListener('click', function() {
+        if (spinning) return;
+        if (dailyChances <= 0) {
+          resultText.textContent = '今日抽奖次数已用完，明天再来吧！';
+          return;
+        }
+        spinning = true;
+        spinBtn.disabled = true;
+        resultText.textContent = '抽奖中...';
+        // 减少抽奖次数
+        dailyChances--;
+        localStorage.setItem('dailyChances', dailyChances);
+        // 更新剩余次数显示
+        const chanceCount = document.getElementById('chance-count');
+        chanceCount.textContent = dailyChances;
+        // 随机选择一个奖品
+        const random = Math.random() * 100;
+        const selectedPrize = prizeRanges.find(range => random >= range.start && random < range.end);
+        // 计算旋转角度
+        const extraSpins = 5 + Math.floor(Math.random() * 3); // 额外旋转圈数
+        const angle = 360 * extraSpins + selectedPrize.angle;
+        // 旋转转盘
+        wheel.style.transform = `rotate(${angle}deg)`;
+        // 旋转完成后显示结果
+        setTimeout(() => {
+          resultText.textContent = `恭喜您获得：${selectedPrize.name} - ${selectedPrize.description}`;
+          spinning = false;
+          if (dailyChances > 0) {
+            spinBtn.disabled = false;
+          }
+        }, 5000); // 与 CSS 动画持续时间一致
+      });
+    });
+  </script>
+</body>
+</html>
